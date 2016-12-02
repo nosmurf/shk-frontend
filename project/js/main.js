@@ -2,18 +2,16 @@ var app = angular.module('app', []);
 
 
 
+
 app.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
-      when('/timeline', {
+    when('/timeline', {
 		templateUrl: 'timeline.html',
 		controller: 'timelineController'
-	}).
-      when('/userAdd', {
-		templateUrl: 'user.html',
-		controller: 'userController'
-      }).
-      otherwise({
-		redirectTo: '/timeline'
-      });
+	 }).
+   when('/userAdd', {
+    templateUrl: 'user.html',
+    controller: 'userController'
+    })
 }]);
