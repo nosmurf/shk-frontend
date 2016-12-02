@@ -13,8 +13,9 @@ app.controller('indexController', function($scope,$rootScope) {
 
 
   $scope.setUser=function(user){
-    $scope.user="user.email";
-
+    $scope.user=user.displayName;
+		console.log($scope.user);
+		$scope.$apply();
   }
 
 

@@ -54,7 +54,7 @@
                 </div>
                 <div class="profile_info">
                   <span>Welcome,</span>
-                  <h2 ng-model=user>{{ user }} </h2>
+                  <h2 ><span contenteditable="true" ng-bind="user"></span> </h2>
                 </div>
               </div>
               <!-- /menu profile quick info -->
@@ -95,7 +95,7 @@
                 <ul class="nav navbar-nav navbar-right">
                   <li class="">
                     <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                      <img src="images/img.jpg" alt=""><span ng-model="user"></span>
+                      <img src="images/img.jpg" alt=""><span contenteditable="true" ng-bind="user"></span> 
                       <span class=" fa fa-angle-down"></span>
                     </a>
                     <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -128,11 +128,11 @@
           <!-- /footer content -->
       </div>
       </div>
+</div>
 
 
 
 
-  </div>
   <dialog id="login">
       <section class="login_content" id="loginController" ng-controller= "loginController">
 

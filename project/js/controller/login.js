@@ -36,7 +36,6 @@ function onSignIn(googleUser) {
       // [END authwithcred]
     } else {
       console.log('User already signed-in Firebase.');
-      userRoot=firebaseUser;
       angular.element(document.getElementById('loginController')).scope().setUser(firebaseUser);
     }
   });
