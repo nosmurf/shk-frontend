@@ -36,7 +36,7 @@ function onSignIn(googleUser) {
       // [END authwithcred]
     } else {
       console.log('User already signed-in Firebase.');
-      angular.element(document.getElementById('loginController')).scope().setUser(firebaseUser);
+      angular.element(document.getElementById('loginController')).scope().setUser(googleUser);
     }
   });
 }
@@ -81,7 +81,7 @@ app.controller('loginController', function($scope,$rootScope,$window,userFactory
     userFactory.setUser(user);
     console.log(user.email);
     $rootScope.login=true;
-    angular.element(document.getElementById('indexController')).scope().setUser(user);
+    angular.element(document.getElementById('indexController')).scope().setUser(user.w3);
     document.getElementById("login").close();
 
   }
