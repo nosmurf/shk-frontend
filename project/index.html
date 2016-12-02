@@ -36,7 +36,7 @@
 
   <body class="nav-md" ng-app="app" >
     <div id="mainController" id="indexController" ng-controller="indexController">
-      <div  class="container body">
+      <div  class="container body" ng-show="login">
         <div class="main_container">
         <div id="indexController" >
           <div class="col-md-3 left_col">
@@ -48,7 +48,7 @@
               <div class="clearfix"></div>
 
               <!-- menu profile quick info -->
-              <div class="profile" ng-show="login">
+              <div class="profile" >
                 <div class="profile_pic">
                   <img src="{{ urlImage }}" alt="..." class="img-circle profile_img">
                 </div>
