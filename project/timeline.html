@@ -5,7 +5,7 @@
 </div>
 <ul class="timeline">
 
-  <li ng-repeat="access in accesses">
+  <li ng-repeat="access in accesses" ng-class="{'timeline-inverted' : access.face==0}">
     <div ng-show="access.face" class="timeline-badge success">
       <i class="glyphicon glyphicon-check" ></i>
     </div>
