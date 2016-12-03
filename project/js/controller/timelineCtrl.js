@@ -9,9 +9,15 @@ app.controller('timelineController', function($scope, userFactory) {
 		$scope.data = childKey;
 		childKey.forEach(function(childSnapshot) {
 					var access={};
-					childSnapshot.val().datetime= new Date(childSnapshot.val().datetime);
 
-		    	$scope.accesses.push(childSnapshot.val());
+					var date = new Date(childSnapshot.val().datetime);
+					//childSnapshot.val().datetime= .toDateString();
+					//childSnapshot.val().datetime =;
+						access["date"]=date.toString();
+						access["face"]=childSnapshot.val().face;
+						access["nfc"]=childSnapshot.val().nfc;
+					console.log(access);
+		    	$scope.accesses.push(access);
 					console.log(childSnapshot.val());
 					});
 		$scope.$apply();
