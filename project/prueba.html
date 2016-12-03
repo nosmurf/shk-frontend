@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AngularJS Routing example</title>
+  </head>
+
+  <body ng-app="sampleApp">
+
+    <div class="container">
+		<div class="row">
+		<div class="col-md-3">
+			<ul class="nav">
+				<li><a href="#AddNewOrder"> Add New Order </a></li>
+				<li><a href="#ShowOrders"> Show Order </a></li>
+			</ul>
+		</div>
+		<div class="col-md-9">
+		  	<div ng-view></div>
+		</div>
+		</div>
+    </div>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+	<script>
+  //Define an angular module for our app
+var sampleApp = angular.module('sampleApp', []);
+
+//Define Routing for app
+//Uri /AddNewOrder -> template add_order.html and Controller AddOrderController
+//Uri /ShowOrders -> template show_orders.html and Controller AddOrderController
+sampleApp.config(['$routeProvider',
+  function($routeProvider) {
+    $routeProvider.
+      when('/AddNewOrder', {
+		templateUrl: 'timeline.html',
+		controller: 'AddOrderController'
+	}).
+      when('/ShowOrders', {
+		templateUrl: 'user.html',
+		controller: 'ShowOrdersController'
+      }).
+      otherwise({
+		redirectTo: '/AddNewOrder'
+      });
+}]);
+
+
+sampleApp.controller('AddOrderController', function($scope) {
+
+	$scope.message = 'This is Add new order screen';
+
+});
+
+
+sampleApp.controller('ShowOrdersController', function($scope) {
+
+	$scope.message = 'This is Show orders screen';
+
+});
+</script>
+  </body>
+</html>
