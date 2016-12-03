@@ -110,23 +110,16 @@ app.controller('loginController', function($scope,$rootScope,$window,userFactory
             var isAnonymous = user.isAnonymous;
             var uid = user.uid;
             var providerData = user.providerData;
+            userFactory.setUID(uid);
             // [START_EXCLUDE]
             //document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
-            document.getElementById('signout').disabled = false;
+            //document.getElementById('signout').disabled = false;
             //document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
             // [END_EXCLUDE]
-          } else {
-            // User is signed out.
-            // [START_EXCLUDE]
-            //document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
-            document.getElementById('signout').disabled = true;
-            //document.getElementById('quickstart-account-details').textContent = 'null';
-              // [END_EXCLUDE]
           }
         });
       // [END authstatelistener]
 
-      document.getElementById('signout').addEventListener('click', handleSignOut, false);
 
   }
 

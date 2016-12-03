@@ -2,6 +2,7 @@
 
 app.factory('userFactory', [ '$http', '$q', function( $http, $q) {
       var user;
+      var uid;
   return {
 
       getUsers: function(){
@@ -18,6 +19,12 @@ app.factory('userFactory', [ '$http', '$q', function( $http, $q) {
       },
       getUser: function(){
         return user;
+      },
+      setUID: function(Uid){
+        uid=Uid
+      },
+      getUID: function(){
+        return uid;
       }
     }
 
