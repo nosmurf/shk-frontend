@@ -16,9 +16,8 @@ app.controller('timelineController', function($scope, userFactory) {
 						access["date"]=date.toString();
 						access["face"]=childSnapshot.val().face;
 						access["nfc"]=childSnapshot.val().nfc;
-					console.log(access);
-		    	$scope.accesses.push(access);
-					console.log(childSnapshot.val());
+					$scope.accesses.push(access);
+					console.log(access["face"]);
 					});
 		$scope.$apply();
 	});
