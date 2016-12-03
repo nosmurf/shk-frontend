@@ -1,3 +1,15 @@
+# Create project Firebase 
+
+Access to console of: 
+[![N|Solid](https://firebase.google.com/_static/898735793c/images/firebase/lockup.png)](https://console.firebase.google.com)
+
+Create the project and access the console.
+
+
+# Config Web
+Inside the console, in the side menu is the option authentication, click and them 'configuración web'. appears Pop up with the application credentials that we will insert in our web application.
+
+
 # shk-frontend
 
 This is the web part for "shk" project
