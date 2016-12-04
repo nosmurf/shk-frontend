@@ -53,14 +53,25 @@ app.controller('timelineController', function($scope, userFactory) {
 
 	$scope.obtainUsers();
 
-	firebase.database().ref('/groups/' +"dUuoiStAEXgpJ7ReIhKohA2LHke2" +"/accesses").on('child_changed', function(data) {
+	firebase.database().ref('/groups/' +userFactory.getUID() +"/accesses").on('child_changed', function(data) {
 		$scope.accesses=[];
 		init();
 	});
 
-	firebase.database().ref('/groups/' +"dUuoiStAEXgpJ7ReIhKohA2LHke2" +"/accesses").on('child_added', function(data) {
-		$scope.accesses.push(data);
-		$scope.accesses.reverse();
+	firebase.database().ref('/groups/' +userFactory.getUID() +"/accesses").on('child_added', function(data) {
+		var access={};
+
+			var date = new Date(data.val().datetime);
+			access["date"]=date.toString();
+			access["user"] = $scope.contains(data.val().uid);
+			access["face"]=data.val().face;
+			access["nfc"]=data.val().nfc;
+			console.log(access);
+			$scope.accesses.reverse();
+			$scope.accesses.push(access);
+			$scope.accesses.reverse();
+			$scope.$apply();
+
 	});
 
 	$scope.message = 'TIMELINE';
