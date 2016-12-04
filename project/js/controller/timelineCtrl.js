@@ -32,7 +32,7 @@ app.controller('timelineController', function($scope, userFactory) {
 	function init() {
 		$scope.accesses=[];
 		var userId = userFactory.getUID();
-			firebase.database().ref('/groups/' +"dUuoiStAEXgpJ7ReIhKohA2LHke2").orderByKey().once('value').then(function(snapshot) {
+			firebase.database().ref('/groups/' +userId).orderByKey().once('value').then(function(snapshot) {
 				var childKey = snapshot.child("accesses");
 				childKey.forEach(function(childSnapshot) {
 							var access={};
