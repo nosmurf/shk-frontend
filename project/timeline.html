@@ -10,9 +10,16 @@
       <i class="glyphicon glyphicon-check" ></i>
     </div>
 
-    <div ng-hide="access.face" class="timeline-badge warning">
+    <div ng-show="access.nfc==0" class="timeline-badge danger">
       <i class="glyphicon glyphicon-check"></i>
     </div>
+
+    <div ng-show="access.face==0 && access.nfc==1" class="timeline-badge warning">
+      <i class="glyphicon glyphicon-check"></i>
+    </div>
+
+
+
 
 
 
