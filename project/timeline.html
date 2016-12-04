@@ -4,20 +4,39 @@
 <h1 id="timeline">{{ message }}</h1>
 </div>
 <ul class="timeline">
-  <li ng-repeat="obj in accesses">
-  <div class="timeline-badge success"><i class="glyphicon glyphicon-check"></i></div>
-  <div class="timeline-panel">
-    <div class="timeline-heading">
-      <h4 class="timeline-title" </h4>
-      <p><i class="glyphicon glyphicon-time"></i>{{ obj.date }}</p>
+
+  <li ng-repeat="access in accesses" ng-class="{'timeline-inverted' : access.face==0}">
+    <div ng-show="access.face" class="timeline-badge success">
+      <i class="glyphicon glyphicon-check" ></i>
     </div>
 
-  </div>
+    <div ng-show="access.nfc==0" class="timeline-badge danger">
+      <i class="glyphicon glyphicon-check"></i>
+    </div>
+
+    <div ng-show="access.face==0 && access.nfc==1" class="timeline-badge warning">
+      <i class="glyphicon glyphicon-check"></i>
+    </div>
+
+
+
+
+
+
+    <div class="timeline-panel">
+      <div class="timeline-heading">
+        <h4 class="timeline-title" </h4>{{ access.user }}
+        <p><i class="glyphicon glyphicon-time"></i>{{ access.date }}</p>
+      </div>
+
+    </div>
   </li>
 
+</ul>
 <!--
   <li class="timeline-inverted">
-  <div class="timeline-badge warning"><i class="glyphicon glyphicon-credit-card"></i></div>
+  <div ng-if="obj.face =='false' and obj.nfc == 'false'" class="timeline-badge warning"><i class="glyphicon glyphicon-check"></i></div>
+
   <div class="timeline-panel">
     <div class="timeline-heading">
       <h4 class="timeline-title">Mussum ipsum cacilds</h4>
@@ -56,5 +75,5 @@
 </li>-->
 
 
-</ul>
+
 </div>
